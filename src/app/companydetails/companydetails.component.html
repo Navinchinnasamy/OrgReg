@@ -12,15 +12,15 @@
            
                    <label for="companyname"><b>Company Name</b></label>
               
-                 <input type="text" name="companyname" placeholder="Enter your Company Name" required>
+                 <input type="text" name="companyname" placeholder="Enter your Company Name" (keyup)="onKey($event)" required>
                  
                    
                <label for="email"><b>Email id</b></label>
-               <input type="text" placeholder="Enter your mail id" name="mail" required>
+               <input type="text" placeholder="Enter your mail id" name="mail" (keyup)="onKey($event)" required>
                <label for="jobtitle"><b>Job Title</b></label>
-               <input type="text" placeholder="Enter your Job Title" name="jobtitle" required>
+               <input type="text" placeholder="Enter your Job Title" name="jobtitle" (keyup)="onKey($event)" required>
                <label for="yrs"><b>Years of Experience</b></label>
-               <input type="text" placeholder="Enter your Years of Experience" name="yrs" required>
+               <input type="text" placeholder="Enter your Years of Experience" name="yrs" (keyup)="onKey($event)" required>
               <br> <br>
                <div class="tacbox">
                 <input id="checkbox" type="checkbox" />
@@ -32,18 +32,6 @@
                  <button type="back" class="btn" style="width: 25%;" [routerLink]="['/personaldetails']">Back</button> &nbsp;
                  <button onclick="save()" class="btn" style="width: 70%; background-color: orange;" [routerLink]="['/otp']">Send OTP</button>
                </div>
-               <script>
-                function save(){
-                  if (typeof(Storage) !="undefined"){
-                    localStorage.setItem("Full Name",X);
-                    localStorage.setItem("Gender",Y);
-                    localStorage.setItem("Country",Z);
-                    localStorage.setItem("State",A);
-                    localStorage.setItem("Phone Number",B);
-                
-                  }
-                }
-              </script>
              </div>
            </form>
      

@@ -11,7 +11,10 @@ export class CompanydetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
+	onKey(event: any) {
+	  localStorage.setItem(event.target.name, event.target.value);
+	}
 }
 
 
