@@ -82,3 +82,12 @@ color: #212121;
 .form-inline {
 display: flex;
 }
+
+
+.nav-link.active {
+	border-color: var(--theme-color1);
+}
+
+.nav-link > b > i {
+	color: white;
+}

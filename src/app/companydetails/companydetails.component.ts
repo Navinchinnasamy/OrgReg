@@ -6,14 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./companydetails.component.css']
 })
 export class CompanydetailsComponent implements OnInit {
-
-  constructor() { }
+  companyname = "";
+  companymail = "";
+  jobtitle = "";
+  yrsofexperience = "";
+  
+  constructor() { 
+	this.companyname = localStorage.getItem("companyname");
+	this.companymail = localStorage.getItem("companymail");
+	this.jobtitle = localStorage.getItem("jobtitle");
+	this.yrsofexperience = localStorage.getItem("yrsofexperience");
+  }
 
   ngOnInit(): void {
   }
   
-	onKey(event: any) {
-	  localStorage.setItem(event.target.name, event.target.value);
+	saveDetails(event: any) {
+	  localStorage.setItem("companyname", this.companyname);
+	  localStorage.setItem("companymail", this.companymail);
+	  localStorage.setItem("jobtitle", this.jobtitle);
+	  localStorage.setItem("yrsofexperience", this.yrsofexperience);
 	}
 }
 

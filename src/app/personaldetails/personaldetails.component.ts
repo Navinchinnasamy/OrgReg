@@ -11,15 +11,26 @@ export class PersonaldetailsComponent implements OnInit {
   country = "";
   state = "";
   phone = "";
+  phonecode = "";
 	
-  constructor() { }
+  constructor() { 
+	this.username = localStorage.getItem("username");
+	this.gender = localStorage.getItem("gender");
+	this.country = localStorage.getItem("country");
+	this.state = localStorage.getItem("state");
+	this.phonecode = localStorage.getItem("phonecode");
+	this.phone = localStorage.getItem("phone");
+  }
 
   ngOnInit(): void {
   }
 
-  
-	onKey(event: any) {
-	  localStorage.setItem(event.target.name, event.target.value);
+	saveDetails(event: any) {
+	  localStorage.setItem("username", this.username);
+	  localStorage.setItem("gender", this.gender);
+	  localStorage.setItem("country", this.country);
+	  localStorage.setItem("state", this.state);
+	  localStorage.setItem("phonecode", this.phonecode);
+	  localStorage.setItem("phone", this.phone);
 	}
-
 }
